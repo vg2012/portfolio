@@ -16,6 +16,15 @@
 		<org.hibernate.version>4.1.4.Final</org.hibernate.version>
 	</properties>
 
+	<repositories>
+	    <!--other repositories if any-->
+	    <repository>
+	        <id>project.local</id>
+	        <name>project</name>
+	        <url>file:${project.basedir}/repo</url>
+	    </repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>antlr</groupId>
