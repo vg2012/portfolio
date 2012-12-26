@@ -1,6 +1,6 @@
-# Spring MVC and Hibernate template application
+# Portfolio Management System
 
-This is a template for a web application that uses Spring MVC and Hibernate. The sample code is a simple CRUD page that manipulates records for a single model object.
+This is a application to maintan the stock Portfolio
 
 ## Running the application locally
 
