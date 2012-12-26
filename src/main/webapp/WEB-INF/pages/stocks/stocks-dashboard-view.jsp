@@ -13,7 +13,7 @@
 <link href="${pageContext.request.contextPath}/css/jVal.css"
 	rel="stylesheet" type="text/css" />
 <script type="text/javascript"
-	data-main="${pageContext.request.contextPath}/js/stocks/config.js?cs=${pageContext.request.contextPath}"
+	data-main="${pageContext.request.contextPath}/js/stocks/config.js"
 	src="${pageContext.request.contextPath}/js/pfm/core/krn/sys/kernel.js"></script>
 </head>
 <body>

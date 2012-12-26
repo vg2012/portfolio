@@ -13,16 +13,16 @@
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
-		<org.hibernate.version>4.1.4.Final</org.hibernate.version>
+		<org.hibernate.version>4.0.1.Final</org.hibernate.version>
 	</properties>
 
 	<repositories>
-	    <!--other repositories if any-->
-	    <repository>
-	        <id>project.local</id>
-	        <name>project</name>
-	        <url>file:${project.basedir}/repo</url>
-	    </repository>
+		<!--other repositories if any -->
+		<repository>
+			<id>project.local</id>
+			<name>project</name>
+			<url>file:${project.basedir}/repo</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -74,14 +74,13 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.1.1.Final</version>
+			<version>${org.hibernate.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.5.5-Final</version>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>${org.hibernate.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -325,10 +324,10 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
-                    <warName>${project.artifactId}</warName>
-                </configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+					<warName>${project.artifactId}</warName>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -57,10 +57,10 @@ loadStockGridSection = function get_holding_list() {
 }
 
 validateTicker = function stockTickerCheck() {
-	 $('#valid').html('<img src="'+context_get_main_section_div()+'/images/ajax-loader.gif"/>' + ' Validating ...');
+	 $('#valid').html('<img src="/images/ajax-loader.gif"/>' + ' Validating ...');
 	 var s_ticker = $("#ticker").val();
 	 $.ajax({
-		url :  context_get_main_section_div() +"/validateTicker",
+		url :  "/validateTicker",
 		data : {ticker : s_ticker},
 		success: function(msg) {
           var delay = function() {

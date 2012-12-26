@@ -4,10 +4,6 @@
 
 var _main_section_content_div = "";
 
-$(document).ready(function() {
-	_main_section_content_div = get_main_section_div();
-	_ersAjaxEngineCommonTabListener();
-});
 
 var commonUserRequest = $.manageAjax.create('commonAjaxServices', {
 	queue : true,
@@ -52,8 +48,7 @@ function _register_service_action(ajRequestData) {
 	});
 	if (ajRequestData.showWait) {
 		$(ajRequestData.waitNode).html(
-				'<img src="' + context_get_main_section_div()
-						+ '/images/ajax-loader.gif"/>');
+				'<img src="/images/ajax-loader.gif"/>');
 	}
 	if (ajRequestData.hideNode) {
 		$(ajRequestData.hideNode).hide();
@@ -80,34 +75,6 @@ function get_main_section_div() {
 	}
 }
 
-function _ersAjaxEngineCommonTabListener() {
-	$('a[href=' + document.location.hash + ']').addClass('current');
-	$('a[rel=ajax]').click(function() {
-		var hash = this.href;
-		hash = hash.replace(/^.*#/, '');
-		// check parent nodes first, then href nodes
-
-		$('a[rel=ajax]').removeClass('current');
-		$(this).addClass('current');
-		$('#' + _main_section_content_div).hide();
-
-		ers.getPage(hash);
-		return false;
-	});
-}
-
-function _ersAjaxEngineCommonInnerTabListener() {
-	$('a[href=' + document.location.hash + ']').addClass('current');
-	$('a[rel=ajax_inner]').click(function() {
-		var hash = this.href;
-		hash = hash.replace(/^.*#/, '');
-		$('a[rel=ajax_inner]').removeClass('current');
-		$(this).addClass('current');
-		$('#' + _main_section_content_div).hide();
-		ers.getInnerPage(hash);
-		return false;
-	});
-}
 
 function _doCommonScreenLoad(section, htmlData) {
 	$(section).html(htmlData);
@@ -129,70 +96,6 @@ function _params(args, idx) {
 	return args[idx] != null ? args[idx] : null;
 }
 
-function _commonAlertMessageTrigger() {
-	$('#ex6b').jqm(
-			{
-				ajax : context_get_main_section_div()
-						+ '/access/confirmation_message_1',
-				target : 'div.jqmAlertContent',
-				modal : true,
-				overlay : 100
-			});
-
-	// Close Button Highlighting. IE doesn't support :hover. Surprise?
-	if ($.browser.msie) {
-		$('div.jqmAlert .jqmClose').hover(function() {
-			$(this).addClass('jqmCloseHover');
-		}, function() {
-			$(this).removeClass('jqmCloseHover');
-		});
-	}
-	$('#ex6b').jqmShow();
-}
-
-function _commonErrorMessageListener(type) {
-	var type = _param(arguments);
-	if (type) {
-		var triggers = $(type)[0];
-		$('#ex3b').jqm({
-			trigger : triggers,
-			ajax : context_get_main_section_div() + '/access/alertmessage',
-			target : 'div.jqmAlertContent',
-			overlay : 100
-		});
-
-		// Close Button Highlighting. IE doesn't support :hover. Surprise?
-		if ($.browser.msie) {
-			$('div.jqmAlert .jqmClose').hover(function() {
-				$(this).addClass('jqmCloseHover');
-			}, function() {
-				$(this).removeClass('jqmCloseHover');
-			});
-		}
-	}
-}
-
-function _commonErrorMessageListenerMulti(type, holder) {
-	if (type) {
-		var triggers = $(type)[0];
-		$(holder).jqm({
-			trigger : triggers,
-			ajax : context_get_main_section_div() + '/access/alertmessage',
-			target : 'div.jqmAlertContent',
-			modal : true,
-			overlay : 100
-		});
-
-		// Close Button Highlighting. IE doesn't support :hover. Surprise?
-		if ($.browser.msie) {
-			$('div.jqmAlert .jqmClose').hover(function() {
-				$(this).addClass('jqmCloseHover');
-			}, function() {
-				$(this).removeClass('jqmCloseHover');
-			});
-		}
-	}
-}
 
 function _doServerCommunications(action, aResultsFunc, formId, showWait,
 		waitNode, hideNode) {
@@ -207,23 +110,3 @@ function _doServerCommunications(action, aResultsFunc, formId, showWait,
 	_register_service_action(commRequest);
 }
 
-function _commonSaveAlertMessageTrigger() {
-	$('#ex6b').jqm(
-			{
-				ajax : context_get_main_section_div()
-						+ '/access/save_confirmation_message_1',
-				target : 'div.jqmAlertContent',
-				modal : true,
-				overlay : 100
-			});
-
-	// Close Button Highlighting. IE doesn't support :hover. Surprise?
-	if ($.browser.msie) {
-		$('div.jqmAlert .jqmClose').hover(function() {
-			$(this).addClass('jqmCloseHover');
-		}, function() {
-			$(this).removeClass('jqmCloseHover');
-		});
-	}
-	$('#ex6b').jqmShow();
-}
