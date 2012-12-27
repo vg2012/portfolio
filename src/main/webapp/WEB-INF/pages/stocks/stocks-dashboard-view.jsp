@@ -26,46 +26,71 @@
 		style="padding: 0px; background: none; border: 1px">
 		<form:form id="stockDetailSaveForm" class="form-horizontal"
 			commandName="stocksDTO" method="POST">
-			<form:errors path="*" cssClass="errorBox" />
 			<fieldset>
 				<fieldset>
 					<legend>Stock Details</legend>
 				</fieldset>
-				<div class="control-group">
-					<label class="control-label" for="name">Ticker</label>
-					<div class="controls">
-						<input type="text" class="input-small" name="ticker" id="ticker"
-							jVal="{valid:function (val) { if (val.length < 1) return 'Ticker is required'; else return ''; }}"
-							jValKey="{valid:/[a-zA-Z]/, message:'&quot;%c&quot; Invalid Character - Only Alphabets Allowed'}" />
-						<form:errors path="ticker" cssClass="errorBox" />
-						<span id="valid"></span>
-					</div>
-				</div>
-				<div class="control-group">
-					<label class="control-label" for="name">Price</label>
-					<div class="controls">
-						<input type="text" class="input-small" name="pricePaid"
-							id="pricePaid"
-							jVal="{valid:function (val) { if (val.length < 1) return 'Price is required'; else return ''; }}"
-							jValKey="{valid:/[0-9.]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
-						<form:errors path="pricePaid" cssClass="errorBox" />
-					</div>
-				</div>
-				<div class="control-group">
-					<label class="control-label" for="name">Quantity</label>
-					<div class="controls">
-						<input type="text" class="input-small" name="quantity"
-							id="quantity"
-							jVal="{valid:function (val) { if (val.length < 1) return 'Quantity is required'; else return ''; }}"
-							jValKey="{valid:/[0-9]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
-						<form:errors path="quantity" cssClass="errorBox" />
-					</div>
-				</div>
-				<div class="control-group" style="width: 25%" align="center">
-					<div id="stockDetailSaveAction">
-						<a href="#" class="btn btn-primary btn-small">Save Details</a>
-					</div>
-				</div>
+				<table>
+					<tr>
+						<td>
+							<div class="control-group">
+								<label class="control-label">Ticker</label>
+							</div>
+						</td>
+						<td>
+							<div class="control-group">
+								<input type="text" class="input-small" name="ticker" id="ticker" style="font-size: 12px"
+									jVal="{valid:function (val) { if (val.length < 1) return 'Ticker is required'; else return ''; }}"
+									jValKey="{valid:/[a-zA-Z]/, message:'&quot;%c&quot; Invalid Character - Only Alphabets Allowed'}" />
+								<form:errors path="ticker" cssClass="errorBox" />
+								<span id="valid"></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="control-group">
+								<label class="control-label" >Price</label>
+							</div>
+						</td>
+						<td>
+							<div class="control-group">
+								<input type="text" class="input-small" name="pricePaid" style="font-size: 12px"
+									id="pricePaid"
+									jVal="{valid:function (val) { if (val.length < 1) return 'Price is required'; else return ''; }}"
+									jValKey="{valid:/[0-9.]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
+								<form:errors path="pricePaid" cssClass="errorBox" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="control-group">
+								<label class="control-label">Quantity</label>
+							</div>
+						</td>
+						<td>
+							<div class="control-group">
+								<input type="text" class="input-small" name="quantity" style="font-size: 12px"
+									id="quantity"
+									jVal="{valid:function (val) { if (val.length < 1) return 'Quantity is required'; else return ''; }}"
+									jValKey="{valid:/[0-9]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
+								<form:errors path="quantity" cssClass="errorBox" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					<tr>
+						<td colspan="2">
+							<div class="control-group"  align="right">
+								<div id="stockDetailSaveAction">
+									<a href="#" class="btn btn-primary btn-small">Save Details</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
 			</fieldset>
 		</form:form>
 		<fieldset>
