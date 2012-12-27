@@ -20,6 +20,9 @@ Step 3:
 Run it with:
     $ java -jar target/dependency/webapp-runner.jar --path "" target/*.war
     
-    Notes: webapp-runner is from Heroku and it will be installed in target/dependency with pom.xml configurations
+    Note: webapp-runner is from Heroku and it will be installed in target/dependency with pom.xml configurations
 
-The application has been tested in Firefox and IE. Minor issues found in IE
+Use DbCreationScript if you want to use local database. 
+Database properties can be chaged in src/main/resources/stocks-dao.properties
+
+Note: The application has been tested in Firefox and IE. Minor issue noticed in IE
