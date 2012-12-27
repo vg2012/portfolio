@@ -6,22 +6,28 @@
 		http://twitter.github.com/bootstrap/
 		
 ========================================== */
-
 @import url('bootstrap.min.css');
+
 @import url('bootstrap-responsive.min.css');
 
 /* New styles below */
+label.valid {
+	width: 24px;
+	height: 24px;
+	background: url(images/valid.png) center center no-repeat;
+	display: inline-block;
+	text-indent: -9999px;
+}
 
-		label.valid {
-		  width: 24px;
-		  height: 24px;
-		  background: url(images/valid.png) center center no-repeat;
-		  display: inline-block;
-		  text-indent: -9999px;
-		}
-		label.error {
-			font-weight: bold;
-			color: red;
-			padding: 2px 8px;
-			margin-top: 2px;
-		}
+label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.huge-form input,.huge-form button {
+	font-size: 1.5em;
+	padding: .6em .4em;
+	line-height: 1.5em;
+}

@@ -1,6 +1,6 @@
 # Portfolio Management System
 
-This is a application to maintain the stock Portfolio
+Application to maintain the stock Portfolio
 
 ## Deploying the application locally
 Pre-installation requirement
@@ -10,14 +10,16 @@ Installation Instructions:
 Step 1:
 Download the code from gitHub
 	https://github.com/vg2012/portfolio
+	extract the code to local drive
 Step 2:
 Build with:
-    $mvn clean install
-
+    $ mvn clean install
+    
+    Note: $ is the directory where the pom.xml exists
 Step 3:
 Run it with:
-    $java -jar target/dependency/webapp-runner.jar --path "" target/*.war
+    $ java -jar target/dependency/webapp-runner.jar --path "" target/*.war
+    
+    Notes: webapp-runner is from Heroku and it will be installed in target/dependency with pom.xml configurations
 
-Notes: Used Java 1.6, webapp-runner from Heroku.
-
-The application has been tested in Firefox
+The application has been tested in Firefox and IE. Minor issues found in IE
