@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 		@NamedQuery(name = "findAllStocks", query = "select myStocks from Stocks myStocks"),
 		@NamedQuery(name = "findStockByStockId", query = "select myStocks from Stocks myStocks where myStocks.stockId = ?1"),
 		@NamedQuery(name = "findStockByTicker", query = "select myStocks from Stocks myStocks where myStocks.ticker =  ?1")})
-	@Table(name = "stocks")
+@Table(name = "stocks")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "portfoliomanagement/com/focustech/portfolio/domain", name = "Users")
+@XmlType(namespace = "portfoliomanagement/com/focustech/portfolio/domain", name = "Stocks")
 @XmlRootElement(namespace = "portfoliomanagement/com/focustech/portfolio/domain")
 public class Stocks implements Serializable {
 	private static final long serialVersionUID = 1L;
