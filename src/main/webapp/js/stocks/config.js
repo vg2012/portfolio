@@ -1,6 +1,8 @@
-require({
-			baseUrl : '/js/plugins/jquery/1.7.1/',
-				priority : [ 'jquery-1.7.1.min' ]
+require(
+		{
+			baseUrl :  '/'
+				+ 'js/plugins/jquery/1.4.3/',
+				priority : [ 'jquery-1.4.3.min' ]
 		},
 		['/js/pfm/core/krn/sys/lwapi.js',
 		 '/js/plugins/jquery.pagination.js',
