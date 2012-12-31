@@ -39,7 +39,8 @@
 						</td>
 						<td>
 							<div class="control-group">
-								<input type="text" class="input-small" name="ticker" id="ticker" style="font-size: 12px"
+								<input type="text" class="input-small" name="ticker" id="ticker"
+									style="font-size: 12px"
 									jVal="{valid:function (val) { if (val.length < 1) return 'Ticker is required'; else return ''; }}"
 									jValKey="{valid:/[a-zA-Z]/, message:'&quot;%c&quot; Invalid Character - Only Alphabets Allowed'}" />
 								<form:errors path="ticker" cssClass="errorBox" />
@@ -50,13 +51,13 @@
 					<tr>
 						<td>
 							<div class="control-group">
-								<label class="control-label" >Price</label>
+								<label class="control-label">Price</label>
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								<input type="text" class="input-small" name="pricePaid" style="font-size: 12px"
-									id="pricePaid"
+								<input type="text" class="input-small" name="pricePaid"
+									style="font-size: 12px" id="pricePaid"
 									jVal="{valid:function (val) { if (val.length < 1) return 'Price is required'; else return ''; }}"
 									jValKey="{valid:/[0-9.]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
 								<form:errors path="pricePaid" cssClass="errorBox" />
@@ -71,8 +72,8 @@
 						</td>
 						<td>
 							<div class="control-group">
-								<input type="text" class="input-small" name="quantity" style="font-size: 12px"
-									id="quantity"
+								<input type="text" class="input-small" name="quantity"
+									style="font-size: 12px" id="quantity"
 									jVal="{valid:function (val) { if (val.length < 1) return 'Quantity is required'; else return ''; }}"
 									jValKey="{valid:/[0-9]/, message:'&quot;%c&quot; Invalid Character - Only Digits Allowed'}" />
 								<form:errors path="quantity" cssClass="errorBox" />
@@ -81,11 +82,15 @@
 					</tr>
 					<tr>
 						<td colspan="2">&nbsp;</td>
+					</tr>
+				</table>
+				<table style="width:375px;">
 					<tr>
-						<td colspan="2">
-							<div class="control-group"  align="right">
+						<td>
+							<div class="control-group" align="center">
 								<div id="stockDetailSaveAction">
-									<a href="#" class="btn btn-primary btn-small">Save Details</a>
+									<a href="#" class="btn btn-primary btn-small"
+										id="stockSaveAnchorId">Save Details</a>
 								</div>
 							</div>
 						</td>
