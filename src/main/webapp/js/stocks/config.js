@@ -13,5 +13,5 @@ require(
 		 function() {
 			setTimeout(function() {
 				require(['/js/stocks/main.js' ])
-			}, 1300);
+			}, 3000);
 		});
